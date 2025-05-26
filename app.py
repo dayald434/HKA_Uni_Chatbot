@@ -20,7 +20,7 @@ load_dotenv('.env')
 
 # 🔽 Create two columns: image (left), title (right)
 
-st.image("HKA_logo.png", width=700)  # adjust path and size
+st.image("HKA_LOGO.png", width=700)  # adjust path and size
 st.title("HKA AI Chatbot")
 
 base_url = "https://3969-2001-7c7-2050-152-510d-800a-7afc-7581.ngrok-free.app"
