@@ -16,7 +16,7 @@ from langchain_community.chat_message_histories import SQLChatMessageHistory
 
 from langchain_core.output_parsers import StrOutputParser
 
-load_dotenv('./../.env')
+load_dotenv('.env')
 
 # 🔽 Create two columns: image (left), title (right)
 
