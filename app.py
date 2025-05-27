@@ -21,7 +21,7 @@ load_dotenv('.env')
 # 🔽 Create two columns: image (left), title (right)
 
 st.image("HKA_LOGO.png", width=700)  # adjust path and size
-st.title("HKA AI Chatbot")
+st.title("Devi Dayal's Own AI Chatbot")
 
 base_url = "http://localhost:11434"
 
