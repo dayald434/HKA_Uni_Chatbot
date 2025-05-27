@@ -23,7 +23,8 @@ load_dotenv('.env')
 st.image("HKA_LOGO.png", width=700)  # adjust path and size
 st.title("HKA AI Chatbot")
 
-base_url = "https://3969-2001-7c7-2050-152-510d-800a-7afc-7581.ngrok-free.app"
+base_url = "https://9ef1-2001-7c7-2050-152-fcdc-2e43-ff5c-473d.ngrok-free.app"
+
 
 model = 'llama3.2:3b'
 
