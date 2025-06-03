@@ -1,5 +1,5 @@
-import subprocess
 import streamlit as st
+import requests
 from dotenv import load_dotenv
 from langchain_ollama import ChatOllama
 
@@ -25,15 +25,12 @@ base_url = "http://localhost:11434"
 
 def get_local_ollama_models():
     try:
-        result = subprocess.run(["ollama", "list"], capture_output=True, text=True, check=True)
-        models = []
-        lines = result.stdout.strip().splitlines()[1:]  # Skip header
-        for line in lines:
-            name = line.split()[0]
-            models.append(name)
-        return models
-    except subprocess.CalledProcessError as e:
-        st.error(f"Could not fetch local models: {e}")
+        response = requests.get(f"{base_url}/api/tags")
+        response.raise_for_status()
+        tags = response.json().get("models", [])
+        return [tag["name"] for tag in tags]
+    except Exception as e:
+        st.error(f"Could not fetch local models from Ollama: {e}")
         return []
 
 AVAILABLE_MODELS = get_local_ollama_models()
